@@ -1,0 +1,92 @@
+html{
+    margin: 0px;
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    min-width: 100vh;
+    min-height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card {
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background-color: blue;
+    padding: 5px;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-page {
+    min-width: 100vh;
+    min-height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-main {
+    background-color: rgb(147, 132, 132);
+    height: 100vh;
+    width: 60%;
+}
+
+
+.admin-head {
+    display: flex;
+    width: 100%;
+    background-color: rgb(68, 216, 49);
+}
+
+.admin-head-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-employees {
+    background-color: bisque;
+    width: 100%;
+    height: 100%;
+}
+
+.employee-card {
+    display: flex;
+    justify-content: flex-start;
+    background-color: brown;
+    gap: 15px;
+    font-size: small;
+}
