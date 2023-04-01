@@ -14,12 +14,12 @@ import "../styles/style.css";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA4hFoPFcGFtRh_4ASWgs1XTXvb5aA4wX4",
-    authDomain: "onboarding-640be.firebaseapp.com",
-    projectId: "onboarding-640be",
-    storageBucket: "onboarding-640be.appspot.com",
-    messagingSenderId: "581271955433",
-    appId: "1:581271955433:web:8d788b4dc89ec9b9a28d78"
+    apiKey: "AIzaSyBIAR9XhVSM0r84qksckem1zviqKJnw8J8",
+    authDomain: "onboard-153ee.firebaseapp.com",
+    projectId: "onboard-153ee",
+    storageBucket: "onboard-153ee.appspot.com",
+    messagingSenderId: "799923062129",
+    appId: "1:799923062129:web:631339f72dc1ee4e0e62d0"
 };
 
 // Initialize Firebase
@@ -33,9 +33,24 @@ const Main = () => {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
 
+    const [type, setType] = useState("Manager");
+
+    const checkType = () => {
+        console.log(type);
+        if (type === "New") {
+            verifyNew();
+        }
+        else if (type === "Regular") {
+            verifyReg();
+        }
+        else {
+            verifyAdmin();
+        }
+    }
+
     const verifyAdmin = async () => {
-        console.log(user);
-        console.log(password);
+        // console.log(user);
+        // console.log(password);
 
         const members = collection(db, 'managers');
         const membersSnap = await getDocs(members);
@@ -53,17 +68,60 @@ const Main = () => {
         }
     }
 
+    const verifyNew = async () => {
+        const members = collection(db, 'employees');
+        const membersSnap = await getDocs(members);
+        const membersList = membersSnap.docs.map(doc => doc.data());
+        // console.log(membersList[0].id);
+
+        console.log(membersList);
+
+        for (let i = 0; i < membersList.length; i++) {
+            if (membersList[i].user === user && membersList[i].password === password) {
+                // console.log("BRAVO");
+                // console.log(membersList[i].key);
+                navigate("/employee/" + membersList[i].key);
+            }
+            else {
+                // console.log("nup");
+            }
+        }
+    }
+
+    const verifyReg = async () => {
+        const members = collection(db, 'buddy');
+        const membersSnap = await getDocs(members);
+        const membersList = membersSnap.docs.map(doc => doc.data());
+        // console.log(membersList[0].id);
+
+        for (let i = 0; i < membersList.length; i++) {
+            if (membersList[i].user === user && membersList[i].password === password) {
+                // console.log("BRAVO");
+                navigate("/buddy?" + membersList[i].key);
+            }
+            else {
+                // console.log("nup");
+            }
+        }
+    }
+
 
     return (
         <div className='app'>
             <div className='welcome-card'>
-                Welcome
+                Welcome to AccessBuddy
             </div>
             <div className='form-card'>
+                <p>What employee are you?</p>
+                <div className='radio-div-div'>
+                    <input type="radio" name="type" id='man' value="Manager" onChange={event => setType(event.target.value)} defaultChecked /><label>Manager</label>
+                    <input type="radio" name="type" value="New" onChange={event => setType(event.target.value)} /><label>New</label>
+                    <input type="radio" name="type" value="Regular" onChange={event => setType(event.target.value)} /><label>Regular</label>
+                </div>
                 <div className='user-card'>
                     <input type="text" placeholder='User' onChange={event => setUser(event.target.value)} />
-                    <input type="text" placeholder='Password' onChange={event => setPassword(event.target.value)} />
-                    <button onClick={verifyAdmin}>Enter</button>
+                    <input type="password" placeholder='Password' onChange={event => setPassword(event.target.value)} />
+                    <button onClick={checkType}>Log In</button>
                 </div>
             </div>
         </div>

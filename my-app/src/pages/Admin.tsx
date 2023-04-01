@@ -10,12 +10,12 @@ import EmployeeList from '../Components/EmployeeList';
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA4hFoPFcGFtRh_4ASWgs1XTXvb5aA4wX4",
-    authDomain: "onboarding-640be.firebaseapp.com",
-    projectId: "onboarding-640be",
-    storageBucket: "onboarding-640be.appspot.com",
-    messagingSenderId: "581271955433",
-    appId: "1:581271955433:web:8d788b4dc89ec9b9a28d78"
+    apiKey: "AIzaSyBIAR9XhVSM0r84qksckem1zviqKJnw8J8",
+    authDomain: "onboard-153ee.firebaseapp.com",
+    projectId: "onboard-153ee",
+    storageBucket: "onboard-153ee.appspot.com",
+    messagingSenderId: "799923062129",
+    appId: "1:799923062129:web:631339f72dc1ee4e0e62d0"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -62,15 +62,13 @@ const Admin = () => {
             <div className='admin-main'>
                 <div className='admin-head'>
                     <div className='admin-head-1'>
-                        <h3>Hello, there</h3>
-                        <div className='admin-head-2'>
-                            <button onClick={addEmployee}>Add employee</button>
-                            <button onClick={LogOut}>Log Out</button>
-                        </div>
+                        <h3>AccessBuddy Admin</h3>
+                        <button className='logout' onClick={LogOut}>Log Out</button>
                     </div>
                 </div>
-                <div>
+                <div className='admin-emp'>
                     <h2>All employees</h2>
+                    <button className='add' onClick={addEmployee}>Add employee</button>
                 </div>
                 <div className='admin-employees'>
                     <EmployeeList />

@@ -1,19 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 html{
     margin: 0px;
     background-color: yellow;
     width: 100%;
     height: 100%;
+    font-family: 'Inter';
 }
 
 .app {
     min-width: 100vh;
     min-height: 100vh;
-    background-color: aquamarine;
+    background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter';
+}
+
+.radio-div-div {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.admin-head-2 {
+    display: flex;
+    gap: 10px;
+}
+
+.pareriDiv {
+    position: fixed;
+    margin-bottom: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    background-color: #1615157c;
+    backdrop-filter: blur(30px);
+    border: 1px solid #393535;
+    z-index: 10;
+}
+
+.skill-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+p {
+    color: white;
+    font-weight: 800;
+}
+
+.other {
+    margin: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    padding: 6px;
+    border-radius: 15px;
+    background-color: #1615157c;
+    border: 1px solid #393535;
+}
+
+.skill-card2 {
+    width: 500px;
+    padding: 6px;
+    border-radius: 15px;
+    background-color: #161515;
+    border: 1px solid #393535;
+}
+
+label {
+    width: 350px;
+}
+
+.next-btn {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+}
+
+.slidere {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.slidecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #161515;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    transition: width 0.5s linear;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #9ED744;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.slider::-moz-range-thumb {
+    border-radius: 40px;
+    width: 25px;
+    height: 25px;
+    background: #9ED744;
+    cursor: pointer;
+}
+
+
+
+.next {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: #1E1E1E;
+    font-size: medium;
+    transition: .2s all;
+    border-radius: 7px;
+    border: 1px solid #39353500;
+}
+
+.next:hover {
+    background-color: #1E1E1E;
+    color: white;
+    border: 1px solid #393535;
+}
+.pareriUpper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pareri-text {
+    font-size: small;
+    font-weight: 600;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    /* background-color: #F5F5F5; */
+    background-color: #324415;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    transition: width 0.5s linear;
+    height: 100%;
+    /* background-color: #9aa949; */
+    background-color: #9ED744;
+    /* color: #9ED744; */
+    border-radius: 10px;
+    display: flex;
+    align-self: center;
+}
+
+h2 {
+    color: white;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.skills-app {
+    padding-bottom: 100px;
+    min-width: 100vh;
+    min-height: 100vh;
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Inter';
 }
 
 .main-card {
@@ -24,24 +232,36 @@ html{
 }
 
 .form-card {
+    color: white;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    background-color: blue;
-    padding: 5px;
+    width: fit-content;
+    width: 300px;
+    background-color: #1E1E1E;
+    border: 2px solid #3C3C3C;
+    box-shadow: 0px 0px 172px 5px rgba(102, 245, 79, 0.25);
+    border-radius: 30px;
+    padding: 10px;
+    font-family: 'Inter';
 }
 
 .user-card {
+    padding: 30px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     flex-direction: column;
 }
 
 .admin-page {
     min-width: 100vh;
     min-height: 100vh;
-    background-color: aquamarine;
+    background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -49,17 +269,152 @@ html{
     align-items: center;
 }
 
+.admin-emp {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
 .admin-main {
-    background-color: rgb(147, 132, 132);
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: 100vh;
     width: 60%;
 }
 
+.welcome-card {
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
 
 .admin-head {
+    color: white;
     display: flex;
+    flex-direction: row;
     width: 100%;
-    background-color: rgb(68, 216, 49);
+    border-radius: 14px;
+    background-color: #1E1E1E;
+    border: 2px solid #3C3C3C;
+    box-shadow: 0px 0px 170px 15px rgba(102, 245, 79, 0.25);
+    margin-top: 10px;
+}
+
+
+input {
+    font-family: 'Inter';
+    background-color: #1E1E1E;
+    border: 2px solid #3C3C3C;
+    border-radius: 11px;
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: medium;
+    font-size: large;
+    color: white;
+    outline: none;
+}
+
+button {
+    font-family: 'Inter';
+    background-color: #c7fa59;
+    border: 2px solid #84ae27;
+    border-radius: 11px;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    font-weight: medium;
+    font-size: large;
+    color: #84ae27;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .2s all;
+}
+
+button:hover {
+    background-color: #b5e253;
+}
+
+.logout {
+    width: 80px;
+    height: 40px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: small;
+    transition: .2s all;
+    border-radius: 7px;
+}
+
+.logout:hover {
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    color: red;
+    font-size: small;
+}
+
+.radio-div {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.add {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: #1E1E1E;
+    font-size: small;
+    transition: .2s all;
+    border-radius: 7px;
+}
+
+.add-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.add-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add:hover {
+    background-color: rgb(183, 183, 183);
+}
+
+.back {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: #1E1E1E;
+    font-size: small;
+    transition: .2s all;
+    border-radius: 7px;
+}
+.back:hover {
+    background-color: rgb(183, 183, 183);
 }
 
 .admin-head-1 {
@@ -77,16 +432,84 @@ html{
     flex-direction: column;
 }
 
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
 .admin-employees {
-    background-color: bisque;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 100%;
 }
 
-.employee-card {
+.update {
+    margin-top: 10px;
+    background-color: #1E1E1E;
+    width: 120px;
+    font-weight: 700;
+    transform: .2s all;
+}
+
+.update:hover {
+    background-color: #84ae27;
+    color: #1E1E1E;
+    width: 120px;
+    font-weight: 700;
+}
+
+h1 {
+    font-family: 'Inter';
+    color: white;
+}
+.view-form {
+    margin-top: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    background-color: brown;
-    gap: 15px;
-    font-size: small;
+    align-items: center;
+    width: fit-content;
+    height: 800px;
+    width: 800px;
+    background-color: #1E1E1E;
+    border: 2px solid #3C3C3C;
+    box-shadow: 0px 0px 172px 5px rgba(102, 245, 79, 0.25);
+    border-radius: 30px;
+    padding: 10px;
+    font-family: 'Inter';
+}
+
+.employee-card {    
+    display: flex;
+    height: 60px;
+    width: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #1E1E1E;
+    border: 2px solid #3C3C3C;
+    border-radius: 12px;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.employee-data {
+    font-family: 'Inter';
+    font-weight: 700;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: large;
+    transition: .2s all;
+}
+
+.employee-data:hover {
+    box-shadow: 0px 0px 172px 5px rgba(102, 245, 79, 0.25);
+}
+
+.employee-card:hover {
+    background-color: rgb(124, 28, 28);
 }
